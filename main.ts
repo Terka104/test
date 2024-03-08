@@ -2,24 +2,24 @@ type Hodnoceni = {
     jmeno: string,
     znamka: number
 }
-// Máte seznam jmen a známek studentů ve třídě. 
-// Například: 
 let znamky: Array<Hodnoceni> = [
     { jmeno: "Petr", znamka: 2 },
     { jmeno: "Anna", znamka: 1 },
     { jmeno: "Jana", znamka: 3 },
     { jmeno: "David", znamka: 1 }
+
 ]
-
-function Seznam(zmamky:Array; ) {
-    for
+const novySeznam: Array<string> = [];
+let nejlepsiZnamka: number = znamky[0].znamka;
+for (let i: number = 0; i < znamky.length; i++) {
+    if (znamky[i].znamka < nejlepsiZnamka) {
+        nejlepsiZnamka = znamky[i].znamka;
+    }
 }
-/* 
-Napište algoritmus, který vytvoří nový seznam 
-obsahující pouze jména studentů s nejlepší známkou. 
-Pokud je více studentů se stejnou nejlepší známkou, 
-zahrňte je všechny do seznamu.
-*/
-const novySeznam: Array<string> = []; //Například: ["Anna", "David"].
 
+for (let i: number = 0; i < znamky.length; i++) {
+    if (znamky[i].znamka === nejlepsiZnamka) {
+        novySeznam.push(znamky[i].jmeno);
+    }
+}
 console.logValue("šprti", novySeznam)
